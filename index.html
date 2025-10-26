@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      height: 100vh; /* use exact viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Confetti animation in the background */
+    .confetti-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Main content wrapper */
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-5%); /* lift slightly to counter visual bottom weight */
+    }
+
+    .foreground-animation {
+      height: 300px;
+      width: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #000000;
+    }
+
+    .tiny {
+      font-size: 0.45em;
+      color: #aaa;
+      font-style: italic; /* optional for subtle effect */
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      .foreground-animation {
+        max-width: 500px;
+      }
+    }
+
+    /* Mobile line break for <h1> */
+    .mobile-break {
+      display: none; /* hide <br> by default (desktop) */
+    }
+    
+    @media (max-width: 600px) {
+      .mobile-break {
+        display: inline; /* show <br> on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <lottie-player
+    class="confetti-bg"
+    src="confetti.json"
+    background="transparent"
+    speed="1"
+    loop
+    autoplay
+  ></lottie-player>
+
+  <div class="content">
+    <lottie-player
+      class="foreground-animation"
+      src="run.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay
+    ></lottie-player>
+
+    <h1>Thank you,<span class="mobile-break"><br></span>Asian Orthopedics!</h1>
+    <p>To <strong>Coach Vince!!!</strong> for all 12 sessions of PT magic ✨🙌 and to <strong>Dr. Najarro</strong> for ensuring my knee's in one piece!</p>
+
+  </div>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+</html>
